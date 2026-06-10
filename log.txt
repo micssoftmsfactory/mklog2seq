@@ -1,0 +1,852 @@
+<0>[   85.457743] [sz3]pid=0xfff ===== sys_open start =====
+<0>[   85.457748] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:956:sys_open(filename=                            /dev/urandom, flags=0x0, mode=0x0) start
+<0>[   85.457755] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:933:do_sys_open(dfd=0xffffff9c, filename=                            /dev/urandom, flags=0x0, mode=0x0) start
+<0>[   85.457762] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:144:getname(filename=                            /dev/urandom) start
+<0>[   85.457768] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:121:do_getname(filename=                            /dev/urandom, page=0xdeae7000) start
+<0>[   85.457774] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:135:do_getname return(0x0), source = j;dsalfkasdjfla;jsfd
+<0>[   85.457779] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:159:getname return(0xdeae7000)
+<0>[   85.457784] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:451:alloc_fd(start=0x0, flags=0x0) start
+<0>[   85.457789] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:260:expand_files(files=0xdf1beac0, nr=0x3) start
+<0>[   85.457795] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:274:expand_files return(0x0)
+<0>[   85.457799] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:498:alloc_fd return(0x3)
+<0>[   85.457805] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2484:do_filp_open(dfd=0xffffff9c, pathname=0xdeae7000, open_flag=0x0, mode=0x0, acc_mode=0x0) start
+<0>[   85.457811] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2283:open_to_namei_flags(flag=0x0) start
+<0>[   85.457816] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2286:open_to_namei_flags return(0x1)
+<0>[   85.457821] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:117:get_empty_filp() start
+<0>[   85.457826] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:71:get_nr_files() start
+<0>[   85.457830] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:72:get_nr_files return(0x380)
+<0>[   85.457836] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:149:get_empty_filp return(0xde79e080)
+<0>[   85.457842] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1762:do_path_lookup(dfd=0xffffff9c, name=0xdeae7000, flags=0x101, nd=0xde7e7ee4) start
+<0>[   85.457849] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1635:path_init_rcu(dfd=0xffffff9c, name=0xdeae7000, flags=0x101, nd=0xde7e7ee4) start
+<0>[   85.457855] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1700:path_init_rcu return(0x0)
+<0>[   85.457860] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1577:path_walk_rcu(name=0xdeae7000, nd=0xde7e7ee4) start
+<0>[   85.457865] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1389:link_path_walk(name=0xdeae7000, nd=0xde7e7ee4) start
+<0>[   85.457871] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf060b34, flags=0x1) start
+<0>[   85.457877] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf060b34, mask=0x1, flags=0x1) start
+<0>[   85.457883] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.457888] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0xfffffff6)
+<0>[   85.457893] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:418:nameidata_drop_rcu(nd=0xde7e7ee4) start
+<0>[   85.457898] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:377:path_get(path=0xde7e7ef8) start
+<0>[   85.457903] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013140) start
+<0>[   85.457908] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013140) start
+<0>[   85.457913] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0x1) start
+<0>[   85.457918] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.457923] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.457927] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013140)
+<0>[   85.457932] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:380:path_get end
+<0>[   85.457936] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013140) start
+<0>[   85.457941] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013140) start
+<0>[   85.457947] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0x1) start
+<0>[   85.457951] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.457956] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.457961] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013140)
+<0>[   85.457965] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:443:nameidata_drop_rcu return(0x0)
+<0>[   85.457971] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf060b34, flags=0x0) start
+<0>[   85.457977] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf060b34, mask=0x1, flags=0x0) start
+<0>[   85.457982] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.457987] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.457993] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.457999] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xded8f194, name=0xde7e7e68) start
+<0>[   85.458005] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xded8f194, hash=0x23ee05) start
+<0>[   85.458010] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf95eb6c)
+<0>[   85.458015] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xded91494)
+<0>[   85.458020] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x105) start
+<0>[   85.458026] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:557:lookup_mnt(path=0xde7e7e74) start
+<0>[   85.458031] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:532:__lookup_mnt(mnt=0xdf013140, dentry=0xded91494, dir=0x1) start
+<0>[   85.458037] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:71:hash(mnt=0xdf013140, dentry=0xded91494) start
+<0>[   85.458043] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:75:hash return(0xcb)
+<0>[   85.458047] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:548:__lookup_mnt return(0xdf013d40)
+<0>[   85.458052] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013d40) start
+<0>[   85.458057] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013d40) start
+<0>[   85.458063] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013d40, n=0x1) start
+<0>[   85.458067] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.458072] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.458076] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013d40)
+<0>[   85.458081] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:564:lookup_mnt return(0xdf013d40)
+<0>[   85.458086] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded91494) start
+<0>[   85.458091] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.458095] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.458100] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.458105] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.458111] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8f194) start
+<0>[   85.458115] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.458120] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013140) start
+<0>[   85.458125] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013140) start
+<0>[   85.458130] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013140) start
+<0>[   85.458135] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0xffffffff) start
+<0>[   85.458140] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.458144] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.458149] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.458153] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.458158] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.458163] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf09d2e0, flags=0x0) start
+<0>[   85.458168] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf09d2e0, mask=0x1, flags=0x0) start
+<0>[   85.458174] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.458179] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.458185] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.458191] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xdee21514, name=0xde7e7e68) start
+<0>[   85.458196] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xdee21514, hash=0x587ca146) start
+<0>[   85.458202] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf95eb48)
+<0>[   85.458207] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xdee0e314)
+<0>[   85.458212] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x101) start
+<0>[   85.458217] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.458222] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.458227] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.458233] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xdee21514) start
+<0>[   85.458237] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.458241] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.458246] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:566:nameidata_drop_rcu_last_maybe(nd=0xde7e7ee4) start
+<0>[   85.458251] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:569:nameidata_drop_rcu_last_maybe return(0x0)
+<0>[   85.458256] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1563:link_path_walk return(0x0)
+<0>[   85.458261] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1580:path_walk_rcu return(0x0)
+<0>[   85.458266] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1620:path_finish_rcu(nd=0xde7e7ee4) start
+<0>[   85.458271] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1630:path_finish_rcu end
+<0>[   85.458275] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:392:path_put(path=0xde7e7ef8) start
+<0>[   85.458280] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8f194) start
+<0>[   85.458285] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.458289] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013140) start
+<0>[   85.458294] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013140) start
+<0>[   85.458299] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013140) start
+<0>[   85.458305] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0xffffffff) start
+<0>[   85.458310] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.458314] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.458318] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.458323] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.458327] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:395:path_put end
+<0>[   85.458331] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1810:do_path_lookup return(0x0)
+<0>[   85.458337] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2304:finish_open(nd=0xde7e7ee4, open_flag=0x0, acc_mode=0x24) start
+<0>[   85.458343] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2291:open_will_truncate(flag=0x0, inode=0xde80f9f0) start
+<0>[   85.458348] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2297:open_will_truncate return(0x0)
+<0>[   85.458354] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2162:may_open(path=0xde7e7ee4, acc_mode=0x24, flag=0x0) start
+<0>[   85.458360] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:267:inode_permission(inode=0xde80f9f0, mask=0x24) start
+<0>[   85.458366] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:226:generic_permission(inode=0xde80f9f0, mask=0x24, flags=0x0) start
+<0>[   85.458372] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xde80f9f0, mask=0x24, flags=0x0) start
+<0>[   85.458377] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.458382] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:234:generic_permission return(0x0)
+<0>[   85.458387] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:300:inode_permission return(0x0)
+<0>[   85.458392] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2209:may_open return(0x0)
+<0>[   85.458396] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:826:nameidata_to_filp(nd=0xde7e7ee4) start
+<0>[   85.458401] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:377:path_get(path=0xde7e7ee4) start
+<0>[   85.458406] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013d40) start
+<0>[   85.458411] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013d40) start
+<0>[   85.458417] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013d40, n=0x1) start
+<0>[   85.458421] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.458426] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.458430] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013d40)
+<0>[   85.458435] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:380:path_get end
+<0>[   85.458440] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:700:__dentry_open(dentry=0xdee0e314, mnt=0xdf013d40, f=0xde79e080) start
+<0>[   85.458505] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:400:file_sb_list_add(file=0xde79e080, sb=0xde426200) start
+<0>[   85.458512] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:376:__file_sb_list_add(file=0xde79e080, sb=0xde426200) start
+<0>[   85.458517] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:387:__file_sb_list_add end
+<0>[   85.458522] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:404:file_sb_list_add end
+<0>[   85.458527] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:388:chrdev_open(inode=0xde80f9f0, filp=0xde79e080) start
+<0>[   85.458533] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:360:cdev_get(p=0xdf0e5c40) start
+<0>[   85.458538] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:369:cdev_get return(0xdf0e5c40)
+<0>[   85.458543] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:374:cdev_put(p=0x0) start
+<0>[   85.458547] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:380:cdev_put end
+<0>[   85.458553] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:431:chrdev_open return(0x0)
+<0>[   85.458558] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:749:__dentry_open return(0xde79e080)
+<0>[   85.458563] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:840:nameidata_to_filp return(0xde79e080)
+<0>[   85.458568] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:392:path_put(path=0xde7e7ee4) start
+<0>[   85.458573] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xdee0e314) start
+<0>[   85.458577] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.458582] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013d40) start
+<0>[   85.458587] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013d40) start
+<0>[   85.458592] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013d40) start
+<0>[   85.458597] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013d40, n=0xffffffff) start
+<0>[   85.458602] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.458607] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.458611] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.458615] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.458620] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:395:path_put end
+<0>[   85.458624] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2346:finish_open return(0xde79e080)
+<0>[   85.458629] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:578:release_open_intent(nd=0xde7e7ee4) start
+<0>[   85.458634] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:587:release_open_intent end
+<0>[   85.458639] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2561:do_filp_open return(0xde79e080)
+<0>[   85.458644] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:918:fd_install(fd=0x3, file=0xde79e080) start
+<0>[   85.458649] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:926:fd_install end
+<0>[   85.458654] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:951:do_sys_open return(0x3)
+<0>[   85.458658] [sz3]pid=0xfff ===== sys_open end =====
+<0>[   85.458661] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:965:sys_open return(0x3)
+<0>[   85.458808] [sz3]pid=0xfff ===== sys_open start =====
+<0>[   85.458813] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:956:sys_open(filename=                /system/lib/libstdc++.so, flags=0x0, mode=0x0) start
+<0>[   85.458820] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:933:do_sys_open(dfd=0xffffff9c, filename=                /system/lib/libstdc++.so, flags=0x0, mode=0x0) start
+<0>[   85.458827] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:144:getname(filename=                /system/lib/libstdc++.so) start
+<0>[   85.458833] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:121:do_getname(filename=                /system/lib/libstdc++.so, page=0xdeae7000) start
+<0>[   85.458838] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:135:do_getname return(0x0)
+<0>[   85.458843] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:159:getname return(0xdeae7000)
+<0>[   85.458848] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:451:alloc_fd(start=0x0, flags=0x0) start
+<0>[   85.458854] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:260:expand_files(files=0xdf1beac0, nr=0x3) start
+<0>[   85.458859] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:274:expand_files return(0x0)
+<0>[   85.458863] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:498:alloc_fd return(0x3)
+<0>[   85.458870] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2484:do_filp_open(dfd=0xffffff9c, pathname=0xdeae7000, open_flag=0x0, mode=0x0, acc_mode=0x0) start
+<0>[   85.458876] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2283:open_to_namei_flags(flag=0x0) start
+<0>[   85.458881] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2286:open_to_namei_flags return(0x1)
+<0>[   85.458885] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:117:get_empty_filp() start
+<0>[   85.458890] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:71:get_nr_files() start
+<0>[   85.458894] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:72:get_nr_files return(0x380)
+<0>[   85.458900] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:149:get_empty_filp return(0xdf214900)
+<0>[   85.458906] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1762:do_path_lookup(dfd=0xffffff9c, name=0xdeae7000, flags=0x101, nd=0xde7e7ee4) start
+<0>[   85.458913] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1635:path_init_rcu(dfd=0xffffff9c, name=0xdeae7000, flags=0x101, nd=0xde7e7ee4) start
+<0>[   85.458919] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1700:path_init_rcu return(0x0)
+<0>[   85.458924] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1577:path_walk_rcu(name=0xdeae7000, nd=0xde7e7ee4) start
+<0>[   85.458929] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1389:link_path_walk(name=0xdeae7000, nd=0xde7e7ee4) start
+<0>[   85.458935] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf060b34, flags=0x1) start
+<0>[   85.458941] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf060b34, mask=0x1, flags=0x1) start
+<0>[   85.458947] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.458951] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0xfffffff6)
+<0>[   85.458956] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:418:nameidata_drop_rcu(nd=0xde7e7ee4) start
+<0>[   85.458962] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:377:path_get(path=0xde7e7ef8) start
+<0>[   85.458967] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013140) start
+<0>[   85.458971] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013140) start
+<0>[   85.458977] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0x1) start
+<0>[   85.458982] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.458986] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.458991] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013140)
+<0>[   85.458995] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:380:path_get end
+<0>[   85.459000] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013140) start
+<0>[   85.459005] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013140) start
+<0>[   85.459010] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0x1) start
+<0>[   85.459015] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.459019] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.459023] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013140)
+<0>[   85.459028] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:443:nameidata_drop_rcu return(0x0)
+<0>[   85.459034] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf060b34, flags=0x0) start
+<0>[   85.459040] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf060b34, mask=0x1, flags=0x0) start
+<0>[   85.459045] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.459050] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.459056] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.459062] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xded8f194, name=0xde7e7e68) start
+<0>[   85.459067] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xded8f194, hash=0xd7747040) start
+<0>[   85.459073] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf96f924)
+<0>[   85.459078] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xded91094)
+<0>[   85.459083] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x105) start
+<0>[   85.459088] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:557:lookup_mnt(path=0xde7e7e74) start
+<0>[   85.459094] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:532:__lookup_mnt(mnt=0xdf013140, dentry=0xded91094, dir=0x1) start
+<0>[   85.459100] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:71:hash(mnt=0xdf013140, dentry=0xded91094) start
+<0>[   85.459105] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:75:hash return(0xbb)
+<0>[   85.459110] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:548:__lookup_mnt return(0xdf013080)
+<0>[   85.459115] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013080) start
+<0>[   85.459120] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013080) start
+<0>[   85.459125] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013080, n=0x1) start
+<0>[   85.459130] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.459134] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.459139] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013080)
+<0>[   85.459144] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:564:lookup_mnt return(0xdf013080)
+<0>[   85.459149] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded91094) start
+<0>[   85.459153] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.459158] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.459162] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.459168] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.459173] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8f194) start
+<0>[   85.459177] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.459182] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013140) start
+<0>[   85.459187] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013140) start
+<0>[   85.459192] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013140) start
+<0>[   85.459197] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0xffffffff) start
+<0>[   85.459202] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.459207] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.459211] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.459215] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.459220] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.459225] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xded94a2c, flags=0x0) start
+<0>[   85.459231] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xded94a2c, mask=0x1, flags=0x0) start
+<0>[   85.459236] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.459241] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.459247] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.459253] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xded89414, name=0xde7e7e68) start
+<0>[   85.459258] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xded89414, hash=0x2697fa) start
+<0>[   85.459264] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf98455c)
+<0>[   85.459268] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xded8c514)
+<0>[   85.459274] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x105) start
+<0>[   85.459279] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.459284] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.459289] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.459294] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded89414) start
+<0>[   85.459299] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.459303] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.459308] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xded940bc, flags=0x0) start
+<0>[   85.459314] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xded940bc, mask=0x1, flags=0x0) start
+<0>[   85.459319] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.459324] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.459330] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.459336] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xded8c514, name=0xde7e7e68) start
+<0>[   85.459342] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xded8c514, hash=0xa7a06089) start
+<0>[   85.459347] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf95c438)
+<0>[   85.459352] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xdeddc114)
+<0>[   85.459357] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x101) start
+<0>[   85.459362] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.459367] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.459372] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.459377] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8c514) start
+<0>[   85.459382] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.459386] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.459391] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:566:nameidata_drop_rcu_last_maybe(nd=0xde7e7ee4) start
+<0>[   85.459396] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:569:nameidata_drop_rcu_last_maybe return(0x0)
+<0>[   85.459401] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1563:link_path_walk return(0x0)
+<0>[   85.459406] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1580:path_walk_rcu return(0x0)
+<0>[   85.459411] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1620:path_finish_rcu(nd=0xde7e7ee4) start
+<0>[   85.459415] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1630:path_finish_rcu end
+<0>[   85.459420] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:392:path_put(path=0xde7e7ef8) start
+<0>[   85.459425] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8f194) start
+<0>[   85.459430] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.459434] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013140) start
+<0>[   85.459439] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013140) start
+<0>[   85.459444] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013140) start
+<0>[   85.459450] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0xffffffff) start
+<0>[   85.459454] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.459459] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.459463] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.459468] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.459472] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:395:path_put end
+<0>[   85.459476] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1810:do_path_lookup return(0x0)
+<0>[   85.459482] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2304:finish_open(nd=0xde7e7ee4, open_flag=0x0, acc_mode=0x24) start
+<0>[   85.459488] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2291:open_will_truncate(flag=0x0, inode=0xdee35810) start
+<0>[   85.459493] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2298:open_will_truncate return(0x0)
+<0>[   85.459499] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2162:may_open(path=0xde7e7ee4, acc_mode=0x24, flag=0x0) start
+<0>[   85.459505] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:267:inode_permission(inode=0xdee35810, mask=0x24) start
+<0>[   85.459511] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:226:generic_permission(inode=0xdee35810, mask=0x24, flags=0x0) start
+<0>[   85.459517] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdee35810, mask=0x24, flags=0x0) start
+<0>[   85.459522] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.459527] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:234:generic_permission return(0x0)
+<0>[   85.459532] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:300:inode_permission return(0x0)
+<0>[   85.459537] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2209:may_open return(0x0)
+<0>[   85.459541] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:826:nameidata_to_filp(nd=0xde7e7ee4) start
+<0>[   85.459546] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:377:path_get(path=0xde7e7ee4) start
+<0>[   85.459551] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013080) start
+<0>[   85.459556] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013080) start
+<0>[   85.459562] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013080, n=0x1) start
+<0>[   85.459566] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.459571] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.459575] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013080)
+<0>[   85.459580] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:380:path_get end
+<0>[   85.459585] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:700:__dentry_open(dentry=0xdeddc114, mnt=0xdf013080, f=0xdf214900) start
+<0>[   85.459591] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:400:file_sb_list_add(file=0xdf214900, sb=0xde8d0600) start
+<0>[   85.459597] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:376:__file_sb_list_add(file=0xdf214900, sb=0xde8d0600) start
+<0>[   85.459602] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:387:__file_sb_list_add end
+<0>[   85.459607] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:404:file_sb_list_add end
+<0>[   85.459613] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:1083:generic_file_open(inode=0xdee35810, filp=0xdf214900) start
+<0>[   85.459618] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:1086:generic_file_open return(0x0)
+<0>[   85.459623] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:749:__dentry_open return(0xdf214900)
+<0>[   85.459628] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:840:nameidata_to_filp return(0xdf214900)
+<0>[   85.459633] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:392:path_put(path=0xde7e7ee4) start
+<0>[   85.459638] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xdeddc114) start
+<0>[   85.459642] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.459647] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013080) start
+<0>[   85.459652] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013080) start
+<0>[   85.459657] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013080) start
+<0>[   85.459662] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013080, n=0xffffffff) start
+<0>[   85.459667] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.459672] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.459676] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.459680] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.459685] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:395:path_put end
+<0>[   85.459689] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2346:finish_open return(0xdf214900)
+<0>[   85.459694] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:578:release_open_intent(nd=0xde7e7ee4) start
+<0>[   85.459699] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:587:release_open_intent end
+<0>[   85.459704] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2561:do_filp_open return(0xdf214900)
+<0>[   85.459709] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:918:fd_install(fd=0x3, file=0xdf214900) start
+<0>[   85.459714] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:926:fd_install end
+<0>[   85.459719] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:951:do_sys_open return(0x3)
+<0>[   85.459722] [sz3]pid=0xfff ===== sys_open end =====
+<0>[   85.459726] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:965:sys_open return(0x3)
+<0>[   85.459898] [sz3]pid=0xfff ===== sys_open start =====
+<0>[   85.459903] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:956:sys_open(filename=                     /system/lib/libm.so, flags=0x0, mode=0x0) start
+<0>[   85.459910] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:933:do_sys_open(dfd=0xffffff9c, filename=                     /system/lib/libm.so, flags=0x0, mode=0x0) start
+<0>[   85.459916] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:144:getname(filename=                     /system/lib/libm.so) start
+<0>[   85.459922] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:121:do_getname(filename=                     /system/lib/libm.so, page=0xdeae7000) start
+<0>[   85.459928] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:135:do_getname return(0x0)
+<0>[   85.459933] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:159:getname return(0xdeae7000)
+<0>[   85.459938] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:451:alloc_fd(start=0x0, flags=0x0) start
+<0>[   85.459943] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:260:expand_files(files=0xdf1beac0, nr=0x3) start
+<0>[   85.459948] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:274:expand_files return(0x0)
+<0>[   85.459953] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:498:alloc_fd return(0x3)
+<0>[   85.459959] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2484:do_filp_open(dfd=0xffffff9c, pathname=0xdeae7000, open_flag=0x0, mode=0x0, acc_mode=0x0) start
+<0>[   85.459965] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2283:open_to_namei_flags(flag=0x0) start
+<0>[   85.459970] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2286:open_to_namei_flags return(0x1)
+<0>[   85.459975] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:117:get_empty_filp() start
+<0>[   85.459980] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:71:get_nr_files() start
+<0>[   85.459984] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:72:get_nr_files return(0x380)
+<0>[   85.459990] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:149:get_empty_filp return(0xde792d80)
+<0>[   85.459996] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1762:do_path_lookup(dfd=0xffffff9c, name=0xdeae7000, flags=0x101, nd=0xde7e7ee4) start
+<0>[   85.460003] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1635:path_init_rcu(dfd=0xffffff9c, name=0xdeae7000, flags=0x101, nd=0xde7e7ee4) start
+<0>[   85.460008] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1700:path_init_rcu return(0x0)
+<0>[   85.460014] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1577:path_walk_rcu(name=0xdeae7000, nd=0xde7e7ee4) start
+<0>[   85.460019] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1389:link_path_walk(name=0xdeae7000, nd=0xde7e7ee4) start
+<0>[   85.460025] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf060b34, flags=0x1) start
+<0>[   85.460031] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf060b34, mask=0x1, flags=0x1) start
+<0>[   85.460036] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.460041] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0xfffffff6)
+<0>[   85.460046] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:418:nameidata_drop_rcu(nd=0xde7e7ee4) start
+<0>[   85.460051] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:377:path_get(path=0xde7e7ef8) start
+<0>[   85.460056] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013140) start
+<0>[   85.460061] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013140) start
+<0>[   85.460066] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0x1) start
+<0>[   85.460071] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.460076] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.460080] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013140)
+<0>[   85.460085] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:380:path_get end
+<0>[   85.460089] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013140) start
+<0>[   85.460094] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013140) start
+<0>[   85.460100] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0x1) start
+<0>[   85.460104] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.460109] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.460113] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013140)
+<0>[   85.460118] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:443:nameidata_drop_rcu return(0x0)
+<0>[   85.460123] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf060b34, flags=0x0) start
+<0>[   85.460129] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf060b34, mask=0x1, flags=0x0) start
+<0>[   85.460135] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.460140] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.460146] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.460152] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xded8f194, name=0xde7e7e68) start
+<0>[   85.460157] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xded8f194, hash=0xd7747040) start
+<0>[   85.460163] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf96f924)
+<0>[   85.460167] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xded91094)
+<0>[   85.460173] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x105) start
+<0>[   85.460178] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:557:lookup_mnt(path=0xde7e7e74) start
+<0>[   85.460184] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:532:__lookup_mnt(mnt=0xdf013140, dentry=0xded91094, dir=0x1) start
+<0>[   85.461403] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf060b34, flags=0x1) start
+<0>[   85.461409] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf060b34, mask=0x1, flags=0x1) start
+<0>[   85.461415] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.460190] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:71:hash(mnt=0xdf013140, dentry=0xded91094) start
+<0>[   85.460195] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:75:hash return(0xbb)
+<0>[   85.460200] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:548:__lookup_mnt return(0xdf013080)
+<0>[   85.460205] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013080) start
+<0>[   85.460210] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013080) start
+<0>[   85.460215] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013080, n=0x1) start
+<0>[   85.460220] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.460224] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.460229] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013080)
+<0>[   85.460234] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:564:lookup_mnt return(0xdf013080)
+<0>[   85.460239] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded91094) start
+<0>[   85.460243] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.460248] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.460253] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.460258] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.460263] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8f194) start
+<0>[   85.460268] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.460272] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013140) start
+<0>[   85.460277] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013140) start
+<0>[   85.460282] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013140) start
+<0>[   85.460287] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0xffffffff) start
+<0>[   85.460292] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.460297] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.460301] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.460305] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.460310] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.460315] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xded94a2c, flags=0x0) start
+<0>[   85.460321] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xded94a2c, mask=0x1, flags=0x0) start
+<0>[   85.460326] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.460331] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.460337] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.460343] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xded89414, name=0xde7e7e68) start
+<0>[   85.460348] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xded89414, hash=0x2697fa) start
+<0>[   85.460353] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf98455c)
+<0>[   85.460358] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xded8c514)
+<0>[   85.460364] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x105) start
+<0>[   85.460369] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.460374] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.460379] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.460384] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded89414) start
+<0>[   85.460389] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.460393] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.460398] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xded940bc, flags=0x0) start
+<0>[   85.460404] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xded940bc, mask=0x1, flags=0x0) start
+<0>[   85.460409] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.460414] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.460420] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.460426] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xded8c514, name=0xde7e7e68) start
+<0>[   85.460432] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xded8c514, hash=0xa0d36867) start
+<0>[   85.460437] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf95826c)
+<0>[   85.460442] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xded9ce14)
+<0>[   85.460447] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x101) start
+<0>[   85.460452] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.460457] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.460462] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.460467] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8c514) start
+<0>[   85.460472] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.460476] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.460481] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:566:nameidata_drop_rcu_last_maybe(nd=0xde7e7ee4) start
+<0>[   85.460486] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:569:nameidata_drop_rcu_last_maybe return(0x0)
+<0>[   85.460491] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1563:link_path_walk return(0x0)
+<0>[   85.460496] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1580:path_walk_rcu return(0x0)
+<0>[   85.460501] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1620:path_finish_rcu(nd=0xde7e7ee4) start
+<0>[   85.460505] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1630:path_finish_rcu end
+<0>[   85.460510] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:392:path_put(path=0xde7e7ef8) start
+<0>[   85.460515] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8f194) start
+<0>[   85.460520] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.460524] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013140) start
+<0>[   85.460529] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013140) start
+<0>[   85.460534] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013140) start
+<0>[   85.460540] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0xffffffff) start
+<0>[   85.460544] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.460549] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.460553] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.460558] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.460562] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:395:path_put end
+<0>[   85.460566] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1810:do_path_lookup return(0x0)
+<0>[   85.460572] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2304:finish_open(nd=0xde7e7ee4, open_flag=0x0, acc_mode=0x24) start
+<0>[   85.460578] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2291:open_will_truncate(flag=0x0, inode=0xdee355b4) start
+<0>[   85.460583] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2298:open_will_truncate return(0x0)
+<0>[   85.460589] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2162:may_open(path=0xde7e7ee4, acc_mode=0x24, flag=0x0) start
+<0>[   85.460595] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:267:inode_permission(inode=0xdee355b4, mask=0x24) start
+<0>[   85.460601] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:226:generic_permission(inode=0xdee355b4, mask=0x24, flags=0x0) start
+<0>[   85.460607] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdee355b4, mask=0x24, flags=0x0) start
+<0>[   85.460612] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.460617] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:234:generic_permission return(0x0)
+<0>[   85.460622] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:300:inode_permission return(0x0)
+<0>[   85.460627] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2209:may_open return(0x0)
+<0>[   85.460632] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:826:nameidata_to_filp(nd=0xde7e7ee4) start
+<0>[   85.460637] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:377:path_get(path=0xde7e7ee4) start
+<0>[   85.460641] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013080) start
+<0>[   85.460646] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013080) start
+<0>[   85.460652] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013080, n=0x1) start
+<0>[   85.460657] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.460661] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.460666] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013080)
+<0>[   85.460670] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:380:path_get end
+<0>[   85.460676] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:700:__dentry_open(dentry=0xded9ce14, mnt=0xdf013080, f=0xde792d80) start
+<0>[   85.460682] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:400:file_sb_list_add(file=0xde792d80, sb=0xde8d0600) start
+<0>[   85.460687] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:376:__file_sb_list_add(file=0xde792d80, sb=0xde8d0600) start
+<0>[   85.460693] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:387:__file_sb_list_add end
+<0>[   85.460697] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:404:file_sb_list_add end
+<0>[   85.460703] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:1083:generic_file_open(inode=0xdee355b4, filp=0xde792d80) start
+<0>[   85.460708] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:1086:generic_file_open return(0x0)
+<0>[   85.460713] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:749:__dentry_open return(0xde792d80)
+<0>[   85.460718] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:840:nameidata_to_filp return(0xde792d80)
+<0>[   85.460723] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:392:path_put(path=0xde7e7ee4) start
+<0>[   85.460728] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded9ce14) start
+<0>[   85.460732] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.460737] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013080) start
+<0>[   85.460742] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013080) start
+<0>[   85.460747] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013080) start
+<0>[   85.460752] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013080, n=0xffffffff) start
+<0>[   85.460757] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.460762] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.460766] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.460771] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.460775] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:395:path_put end
+<0>[   85.460779] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2346:finish_open return(0xde792d80)
+<0>[   85.460784] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:578:release_open_intent(nd=0xde7e7ee4) start
+<0>[   85.460789] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:587:release_open_intent end
+<0>[   85.461420] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0xfffffff6)
+<0>[   85.461425] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:418:nameidata_drop_rcu(nd=0xde7e7ee4) start
+<0>[   85.461430] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:377:path_get(path=0xde7e7ef8) start
+<0>[   85.461435] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013140) start
+<0>[   85.461440] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013140) start
+<0>[   85.461445] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0x1) start
+<0>[   85.461450] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461455] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.461460] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013140)
+<0>[   85.461464] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:380:path_get end
+<0>[   85.461469] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013140) start
+<0>[   85.461474] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013140) start
+<0>[   85.461479] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0x1) start
+<0>[   85.461484] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461488] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.461493] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013140)
+<0>[   85.461498] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:443:nameidata_drop_rcu return(0x0)
+<0>[   85.461503] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf060b34, flags=0x0) start
+<0>[   85.461509] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf060b34, mask=0x1, flags=0x0) start
+<0>[   85.461514] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.461519] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.461525] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.461532] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xded8f194, name=0xde7e7e68) start
+<0>[   85.461537] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xded8f194, hash=0x23ee05) start
+<0>[   85.461543] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf95eb6c)
+<0>[   85.461548] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xded91494)
+<0>[   85.461553] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x105) start
+<0>[   85.461559] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:557:lookup_mnt(path=0xde7e7e74) start
+<0>[   85.461565] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:532:__lookup_mnt(mnt=0xdf013140, dentry=0xded91494, dir=0x1) start
+<0>[   85.461571] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:71:hash(mnt=0xdf013140, dentry=0xded91494) start
+<0>[   85.461576] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:75:hash return(0xcb)
+<0>[   85.461581] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:548:__lookup_mnt return(0xdf013d40)
+<0>[   85.461586] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013d40) start
+<0>[   85.461591] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013d40) start
+<0>[   85.461596] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013d40, n=0x1) start
+<0>[   85.461601] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461605] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.461610] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013d40)
+<0>[   85.461615] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:564:lookup_mnt return(0xdf013d40)
+<0>[   85.461620] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded91494) start
+<0>[   85.461624] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.461629] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.461634] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.461639] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.461645] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8f194) start
+<0>[   85.461649] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.461654] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013140) start
+<0>[   85.461659] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013140) start
+<0>[   85.461664] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013140) start
+<0>[   85.461669] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0xffffffff) start
+<0>[   85.461674] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461678] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.461683] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.461687] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.461691] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.461697] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf09d2e0, flags=0x0) start
+<0>[   85.461703] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf09d2e0, mask=0x1, flags=0x0) start
+<0>[   85.461708] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.461713] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.461719] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.461725] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xdee21514, name=0xde7e7e68) start
+<0>[   85.461730] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xdee21514, hash=0x954a7b45) start
+<0>[   85.461736] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf983f8c)
+<0>[   85.461741] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xdede2714)
+<0>[   85.461746] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x101) start
+<0>[   85.461751] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.461756] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.461762] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.461767] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xdee21514) start
+<0>[   85.461772] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.461776] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.461781] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:566:nameidata_drop_rcu_last_maybe(nd=0xde7e7ee4) start
+<0>[   85.461786] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:569:nameidata_drop_rcu_last_maybe return(0x0)
+<0>[   85.461791] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1563:link_path_walk return(0x0)
+<0>[   85.461796] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1580:path_walk_rcu return(0x0)
+<0>[   85.461800] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1620:path_finish_rcu(nd=0xde7e7ee4) start
+<0>[   85.461805] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1630:path_finish_rcu end
+<0>[   85.461810] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:392:path_put(path=0xde7e7ef8) start
+<0>[   85.461815] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8f194) start
+<0>[   85.461819] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.461824] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013140) start
+<0>[   85.461829] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013140) start
+<0>[   85.461834] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013140) start
+<0>[   85.461839] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0xffffffff) start
+<0>[   85.461844] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461848] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.461853] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.461857] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.460794] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2561:do_filp_open return(0xde792d80)
+<0>[   85.460799] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:918:fd_install(fd=0x3, file=0xde792d80) start
+<0>[   85.460804] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:926:fd_install end
+<0>[   85.460809] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:951:do_sys_open return(0x3)
+<0>[   85.460813] [sz3]pid=0xfff ===== sys_open end =====
+<0>[   85.460816] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:965:sys_open return(0x3)
+<0>[   85.460914] [sz3]pid=0xfff ===== sys_open start =====
+<0>[   85.460919] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:956:sys_open(filename=                            /dev/klogdmp, flags=0x2, mode=0x0) start
+<0>[   85.460926] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:933:do_sys_open(dfd=0xffffff9c, filename=                            /dev/klogdmp, flags=0x2, mode=0x0) start
+<0>[   85.460933] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:144:getname(filename=                            /dev/klogdmp) start
+<0>[   85.461296] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:121:do_getname(filename=                            /dev/klogdmp, page=0xdeae7000) start
+<0>[   85.461303] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:135:do_getname return(0x0)
+<0>[   85.461308] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:159:getname return(0xdeae7000)
+<0>[   85.461314] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:451:alloc_fd(start=0x0, flags=0x2) start
+<0>[   85.461320] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:260:expand_files(files=0xdf1beac0, nr=0x3) start
+<0>[   85.461325] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:274:expand_files return(0x0)
+<0>[   85.461330] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file.c:498:alloc_fd return(0x3)
+<0>[   85.461336] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2484:do_filp_open(dfd=0xffffff9c, pathname=0xdeae7000, open_flag=0x2, mode=0x0, acc_mode=0x0) start
+<0>[   85.461342] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2283:open_to_namei_flags(flag=0x2) start
+<0>[   85.461347] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2286:open_to_namei_flags return(0x3)
+<0>[   85.461352] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:117:get_empty_filp() start
+<0>[   85.461357] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:71:get_nr_files() start
+<0>[   85.461361] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:72:get_nr_files return(0x380)
+<0>[   85.461367] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:149:get_empty_filp return(0xde6d7380)
+<0>[   85.461373] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1762:do_path_lookup(dfd=0xffffff9c, name=0xdeae7000, flags=0x101, nd=0xde7e7ee4) start
+<0>[   85.461380] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1635:path_init_rcu(dfd=0xffffff9c, name=0xdeae7000, flags=0x101, nd=0xde7e7ee4) start
+<0>[   85.461386] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1700:path_init_rcu return(0x0)
+<0>[   85.461392] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1577:path_walk_rcu(name=0xdeae7000, nd=0xde7e7ee4) start
+<0>[   85.461397] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1389:link_path_walk(name=0xdeae7000, nd=0xde7e7ee4) start
+<0>[   85.461403] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf060b34, flags=0x1) start
+<0>[   85.461861] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:395:path_put end
+<0>[   85.461866] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1810:do_path_lookup return(0x0)
+<0>[   85.461872] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2304:finish_open(nd=0xde7e7ee4, open_flag=0x2, acc_mode=0x26) start
+<0>[   85.461878] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2291:open_will_truncate(flag=0x2, inode=0xdf184628) start
+<0>[   85.461883] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2297:open_will_truncate return(0x0)
+<0>[   85.461888] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2162:may_open(path=0xde7e7ee4, acc_mode=0x26, flag=0x2) start
+<0>[   85.461894] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:267:inode_permission(inode=0xdf184628, mask=0x26) start
+<0>[   85.461900] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:226:generic_permission(inode=0xdf184628, mask=0x26, flags=0x0) start
+<0>[   85.461907] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf184628, mask=0x26, flags=0x0) start
+<0>[   85.461912] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.461917] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:234:generic_permission return(0x0)
+<0>[   85.461922] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:300:inode_permission return(0x0)
+<0>[   85.461927] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2209:may_open return(0x0)
+<0>[   85.461931] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:826:nameidata_to_filp(nd=0xde7e7ee4) start
+<0>[   85.461936] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:377:path_get(path=0xde7e7ee4) start
+<0>[   85.461941] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013d40) start
+<0>[   85.461946] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013d40) start
+<0>[   85.461951] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013d40, n=0x1) start
+<0>[   85.461956] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461960] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.461965] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013d40)
+<0>[   85.461970] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:380:path_get end
+<0>[   85.461975] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:700:__dentry_open(dentry=0xdede2714, mnt=0xdf013d40, f=0xde6d7380) start
+<0>[   85.461981] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:674:__get_file_write_access(inode=0xdf184628, mnt=0xdf013d40) start
+<0>[   85.461987] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:341:get_write_access(inode=0xdf184628) start
+<0>[   85.461992] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:350:get_write_access return(0x0)
+<0>[   85.461997] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:692:__get_file_write_access return(0x0)
+<0>[   85.462002] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:400:file_sb_list_add(file=0xde6d7380, sb=0xde426200) start
+<0>[   85.462008] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:376:__file_sb_list_add(file=0xde6d7380, sb=0xde426200) start
+<0>[   85.462013] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:387:__file_sb_list_add end
+<0>[   85.462018] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:404:file_sb_list_add end
+<0>[   85.462023] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:388:chrdev_open(inode=0xdf184628, filp=0xde6d7380) start
+<0>[   85.462029] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:360:cdev_get(p=0xc152e204) start
+<0>[   85.462034] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:369:cdev_get return(0xc152e204)
+<0>[   85.462039] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:374:cdev_put(p=0x0) start
+<0>[   85.462043] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:380:cdev_put end
+<0>[   85.462049] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:431:chrdev_open return(0x0)
+<0>[   85.462054] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:749:__dentry_open return(0xde6d7380)
+<0>[   85.462058] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:840:nameidata_to_filp return(0xde6d7380)
+<0>[   85.462064] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:392:path_put(path=0xde7e7ee4) start
+<0>[   85.462069] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xdede2714) start
+<0>[   85.462073] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.462078] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013d40) start
+<0>[   85.462082] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013d40) start
+<0>[   85.462088] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013d40) start
+<0>[   85.462093] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013d40, n=0xffffffff) start
+<0>[   85.462098] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.462102] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.462107] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.462111] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.462115] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:395:path_put end
+<0>[   85.462120] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2346:finish_open return(0xde6d7380)
+<0>[   85.462125] [sz3]pid=0x57d /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:578:release_open_intent(nd=0xde7e7ee4) start
+<0>[   85.461409] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf060b34, mask=0x1, flags=0x1) start
+<0>[   85.461415] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.461420] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0xfffffff6)
+<0>[   85.461425] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:418:nameidata_drop_rcu(nd=0xde7e7ee4) start
+<0>[   85.461430] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:377:path_get(path=0xde7e7ef8) start
+<0>[   85.461435] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013140) start
+<0>[   85.461440] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013140) start
+<0>[   85.461445] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0x1) start
+<0>[   85.461450] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461455] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.461460] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013140)
+<0>[   85.461464] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:380:path_get end
+<0>[   85.461469] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013140) start
+<0>[   85.461474] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013140) start
+<0>[   85.461479] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0x1) start
+<0>[   85.461484] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461488] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.461493] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013140)
+<0>[   85.461498] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:443:nameidata_drop_rcu return(0x0)
+<0>[   85.461503] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf060b34, flags=0x0) start
+<0>[   85.461509] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf060b34, mask=0x1, flags=0x0) start
+<0>[   85.461514] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.461519] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.461525] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.461532] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xded8f194, name=0xde7e7e68) start
+<0>[   85.461537] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xded8f194, hash=0x23ee05) start
+<0>[   85.461543] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf95eb6c)
+<0>[   85.461548] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xded91494)
+<0>[   85.461553] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x105) start
+<0>[   85.461559] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:557:lookup_mnt(path=0xde7e7e74) start
+<0>[   85.461565] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:532:__lookup_mnt(mnt=0xdf013140, dentry=0xded91494, dir=0x1) start
+<0>[   85.461571] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:71:hash(mnt=0xdf013140, dentry=0xded91494) start
+<0>[   85.461576] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:75:hash return(0xcb)
+<0>[   85.461581] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:548:__lookup_mnt return(0xdf013d40)
+<0>[   85.461586] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013d40) start
+<0>[   85.461591] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013d40) start
+<0>[   85.461596] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013d40, n=0x1) start
+<0>[   85.461601] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461605] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.461610] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013d40)
+<0>[   85.461615] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:564:lookup_mnt return(0xdf013d40)
+<0>[   85.461620] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded91494) start
+<0>[   85.461624] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.461629] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.461634] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.461639] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.461645] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8f194) start
+<0>[   85.461649] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.461654] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013140) start
+<0>[   85.461659] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013140) start
+<0>[   85.461664] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013140) start
+<0>[   85.461669] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0xffffffff) start
+<0>[   85.461674] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461678] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.461683] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.461687] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.461691] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.461697] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:706:exec_permission(inode=0xdf09d2e0, flags=0x0) start
+<0>[   85.461703] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf09d2e0, mask=0x1, flags=0x0) start
+<0>[   85.461708] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.461713] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:725:exec_permission return(0x0)
+<0>[   85.461719] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1270:do_lookup(nd=0xde7e7ee4, name=0xde7e7e68, path=0xde7e7e74, inode=0xde7e7e80) start
+<0>[   85.461725] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:1982:__d_lookup(parent=0xdee21514, name=0xde7e7e68) start
+<0>[   85.461730] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:112:d_hash(parent=0xdee21514, hash=0x954a7b45) start
+<0>[   85.461736] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:115:d_hash return(0xdf983f8c)
+<0>[   85.461741] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:2051:__d_lookup return(0xdede2714)
+<0>[   85.461746] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1000:follow_managed(path=0xde7e7e74, flags=0x101) start
+<0>[   85.461751] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1052:follow_managed return(0x0)
+<0>[   85.461756] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1343:do_lookup return(0x0)
+<0>[   85.461762] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:788:path_to_nameidata(path=0xde7e7e74, nd=0xde7e7ee4) start
+<0>[   85.461767] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xdee21514) start
+<0>[   85.461772] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.461776] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:796:path_to_nameidata end
+<0>[   85.461781] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:566:nameidata_drop_rcu_last_maybe(nd=0xde7e7ee4) start
+<0>[   85.461786] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:569:nameidata_drop_rcu_last_maybe return(0x0)
+<0>[   85.461791] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1563:link_path_walk return(0x0)
+<0>[   85.461796] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1580:path_walk_rcu return(0x0)
+<0>[   85.461800] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1620:path_finish_rcu(nd=0xde7e7ee4) start
+<0>[   85.461805] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1630:path_finish_rcu end
+<0>[   85.461810] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:392:path_put(path=0xde7e7ef8) start
+<0>[   85.461815] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xded8f194) start
+<0>[   85.461819] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.461824] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013140) start
+<0>[   85.461829] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013140) start
+<0>[   85.461834] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013140) start
+<0>[   85.461839] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013140, n=0xffffffff) start
+<0>[   85.461844] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461848] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.461853] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.461857] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.461861] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:395:path_put end
+<0>[   85.461866] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:1810:do_path_lookup return(0x0)
+<0>[   85.461872] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2304:finish_open(nd=0xde7e7ee4, open_flag=0x2, acc_mode=0x26) start
+<0>[   85.461878] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2291:open_will_truncate(flag=0x2, inode=0xdf184628) start
+<0>[   85.461883] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2297:open_will_truncate return(0x0)
+<0>[   85.461888] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2162:may_open(path=0xde7e7ee4, acc_mode=0x26, flag=0x2) start
+<0>[   85.461894] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:267:inode_permission(inode=0xdf184628, mask=0x26) start
+<0>[   85.461900] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:226:generic_permission(inode=0xdf184628, mask=0x26, flags=0x0) start
+<0>[   85.461907] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:181:acl_permission_check(inode=0xdf184628, mask=0x26, flags=0x0) start
+<0>[   85.461912] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:203:acl_permission_check return(0x0)
+<0>[   85.461917] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:234:generic_permission return(0x0)
+<0>[   85.461922] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:300:inode_permission return(0x0)
+<0>[   85.461927] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2209:may_open return(0x0)
+<0>[   85.461931] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:826:nameidata_to_filp(nd=0xde7e7ee4) start
+<0>[   85.461936] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:377:path_get(path=0xde7e7ee4) start
+<0>[   85.461941] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:870:mntget(mnt=0xdf013d40) start
+<0>[   85.461946] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:182:mnt_inc_count(mnt=0xdf013d40) start
+<0>[   85.461951] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013d40, n=0x1) start
+<0>[   85.461956] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.461960] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:184:mnt_inc_count end
+<0>[   85.461965] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:873:mntget return(0xdf013d40)
+<0>[   85.461970] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:380:path_get end
+<0>[   85.461975] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:700:__dentry_open(dentry=0xdede2714, mnt=0xdf013d40, f=0xde6d7380) start
+<0>[   85.461981] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:674:__get_file_write_access(inode=0xdf184628, mnt=0xdf013d40) start
+<0>[   85.461987] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:341:get_write_access(inode=0xdf184628) start
+<0>[   85.461992] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:350:get_write_access return(0x0)
+<0>[   85.461997] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:692:__get_file_write_access return(0x0)
+<0>[   85.462002] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:400:file_sb_list_add(file=0xde6d7380, sb=0xde426200) start
+<0>[   85.462008] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:376:__file_sb_list_add(file=0xde6d7380, sb=0xde426200) start
+<0>[   85.462013] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:387:__file_sb_list_add end
+<0>[   85.462018] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/file_table.c:404:file_sb_list_add end
+<0>[   85.462023] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:388:chrdev_open(inode=0xdf184628, filp=0xde6d7380) start
+<0>[   85.462029] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:360:cdev_get(p=0xc152e204) start
+<0>[   85.462034] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:369:cdev_get return(0xc152e204)
+<0>[   85.462039] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:374:cdev_put(p=0x0) start
+<0>[   85.462043] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:380:cdev_put end
+<0>[   85.462049] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/char_dev.c:431:chrdev_open return(0x0)
+<0>[   85.462054] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:749:__dentry_open return(0xde6d7380)
+<0>[   85.462058] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:840:nameidata_to_filp return(0xde6d7380)
+<0>[   85.462064] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:392:path_put(path=0xde7e7ee4) start
+<0>[   85.462069] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:462:dput(dentry=0xdede2714) start
+<0>[   85.462073] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/dcache.c:474:dput return
+<0>[   85.462078] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:857:mntput(mnt=0xdf013d40) start
+<0>[   85.462082] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:820:mntput_no_expire(mnt=0xdf013d40) start
+<0>[   85.462088] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:192:mnt_dec_count(mnt=0xdf013d40) start
+<0>[   85.462093] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:155:mnt_add_count(mnt=0xdf013d40, n=0xffffffff) start
+<0>[   85.462098] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:163:mnt_add_count end
+<0>[   85.462102] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:194:mnt_dec_count end
+<0>[   85.462107] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:827:mntput_no_expire return
+<0>[   85.462111] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namespace.c:864:mntput end
+<0>[   85.462115] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:395:path_put end
+<0>[   85.462120] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2346:finish_open return(0xde6d7380)
+<0>[   85.462125] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:578:release_open_intent(nd=0xde7e7ee4) start
+<0>[   85.462130] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:587:release_open_intent end
+<0>[   85.462135] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/namei.c:2561:do_filp_open return(0xde6d7380)
+<0>[   85.462140] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:918:fd_install(fd=0x3, file=0xde6d7380) start
+<0>[   85.462145] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:926:fd_install end
+<0>[   85.462150] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:951:do_sys_open return(0x3)
+<0>[   85.462154] [sz3]pid=0xfff ===== sys_open end =====
+<0>[   85.462157] [sz3]pid=0xfff /home/mics/android-x86/gingerbread-x86/ginger-dev/kernel/fs/open.c:965:sys_open return(0x3)

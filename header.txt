@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+<!--
+div.funcname {}
+span.newPage {}
+span.funcbody {background-color: lightblue; border:solid 1px black;}
+span.funcname {}
+span.funcargs {}
+span.funcend {background-color: mistyrose; border:solid 1px black;}
+span.funcresult {}
+span.funcresultbody {}
+span.NotFoundfuncend {color : white; background-color: red; border:solid 1px black;}
+span.NotFoundfuncresult {}
+span.NotFoundfuncresultbody {}
+span.NotStartfuncend {color : white; background-color: red; border:solid 1px black;}
+span.NotStartfuncresult {}
+span.NotStartfuncresultbody {}
+td.lifeline {background-color : white; border:solid 1px black;}
+table.function {border:solid 1px transparent;  border-spacing: 2px 2px;}
+hr.callline {border-top: 1px dashed blue;}
+hr.returnline {border-top: 1px dashed red;}
+span.groupname {background-color: lightgreen; border:solid 1px black;}
+span.taskname {background-color: lightgreen; border:solid 1px black;}
+h1.title {color:blue;}
+hr.logstart {border-top: 2px solid ;}
+span.logstart {background-color: lightsalmon; border:solid 1px black; font-size: larger;}
+span.logstartnewline {font-size: larger;}
+span.logend {background-color: lightsalmon; border:solid 1px black; font-size: larger;}
+hr.logend {border-top: 2px solid ;}
+span.logendnewline {}
+span.groupnameNewline {}
+span.tasknameNewline {}
+div.titleDef  {
+	background-color: #4E9ABE;
+}
+div.groupDef {
+	background-color: #4E9ABE;
+}
+div.taskDef {
+	background-color: #4E9ABE;
+}
+div.sequenceBody {position:relative;}
+div.sequenceHeadder {
+	position: fixed !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #4E9ABE;
+	z-index :2;
+}
+div.comments{
+	position: fixed !important;
+	position: absolute;
+	top: 0;
+	left: 45%;
+	width: 100%;
+	height: 100px;
+	z-index :4;
+	color : white;
+}
+span.credit { color: blue; }
+body { font-size: large; background-color: lightyellow;}
+table { font-size: large; background-color: transparent; }
+
+-->
+</style>
+
+<script src="jquery.min.js"></script>
+
+<script type="text/javascript">
+
+var mov_array = new Array();
+function make_movno()
+{
+    var px = 0;
+    var str = "";
+    for (var i = 0; i < 100; i++) {
+        if (mov_array[i]) {
+            str += ".movno_r_" + i + " {left:" + px + "}"
+            str += ".movno_l_" + i + " {left:-" + px + "}"
+            str += ".call_width_" + i + " {width:" + px + "}";
+        };
+        px += 150;
+    }
+    str += "";
+    $("style").append(str);
+}
+
+//jquery main
+$(function(){
+    for (var i = 0; i < 100; i++) {
+        mov_array[i] = true;
+    }
+    make_movno();
+
+/*
+    $(':image').hover(
+        function(){ $(this).fadeTo("normal", 0.5); },
+        function(){ $(this).fadeTo("fast", 1.0); }
+    );
+*/
+
+//    $('.funcname').balloon();
+
+    // 関数を呼び出していない末端の関数の場合は色をグレーにする
+    $(".function").each( function() {
+        if ( $(this).find(".funcchild").is(":has(\"*\")") == false ) {
+            $(this).find(".funcbody").css("background-color", "lightgray");
+        }
+    });
+
+    // 終了ログが見つかっていない関数のライフラインに色を付ける
+    $(".NotFoundfuncend").each( function() {
+        var ll = $(this).parent().parent().parent().parent().prev().prev();
+        ll.find(".lifeline").css("background-color", "red");
+    });
+
+
+    $(".title").click( function () {
+        $("table").toggle();
+    });
+    $(".funcname").click( function () {
+        $(this).parent().parent().parent().parent().next().find("*").toggle();
+    });
+    $(".funcname,.funcresult,.funcend").bind("contextmenu", function (e) {
+        e.preventDefault();
+        var log = $(this).attr("title");
+console.log("log:" + log);
+        var array = log.match(/^.* (.*)\:(\d+)\:.*$/);
+        var filename = array[1];
+        var lineno = array[2];
+console.log("file:" + filename);
+        if (confirm("次のファイルを開きますか？\n" + filename + "\n" + "行番号:" +lineno)) {
+            var uri = "note:" + encodeURIComponent("/j"+lineno) + "?" + encodeURIComponent(filename);
+            location.href(uri); 
+        }
+	return false;
+    });
+
+    $(".taskname").click( function () {
+        var tno = $(this).attr("tno");
+        $("*[tno="+tno+"]").find(":not(.taskname)").toggle();
+        $(".lifeline[tno="+tno+"]").toggle();
+        $(".lifeline[tno="+tno+"]").toggle();
+        $(".groupname[tno="+tno+"]").toggle();
+/*
+        $(".UnFoundfuncend[tno="+tno+"]").each( function() {
+            var ll = $(this).parent().parent().parent().parent().prev().prev();
+            ll.find(".lifeline").toggle();
+        });
+*/
+        $(".UnFoundfuncend[tno="+tno+"]").toggle();
+
+        //$(this).css("color", "black");
+    });
+
+    $(".groupname").click( function () {
+        var tno = $(this).attr("tno");
+        var gno = $(this).attr("gno");
+        $("*[tno="+tno+"][gno="+gno+"]").find(":not(.groupname)").toggle();
+        $(".lifeline[tno="+tno+"][gno="+gno+"]").toggle();
+/*
+        $(".UnFoundfuncend[tno="+tno+"][gno="+gno+"]").each( function() {
+            var ll = $(this).parent().parent().parent().parent().prev().prev();
+            ll.find(".lifeline").toggle();
+        });
+*/
+        $(".UnFoundfuncend[tno="+tno+"][gno="+gno+"]").toggle();
+
+        let visible = $("*[tno="+tno+"][gno="+gno+"]").find(":not(.groupname)").is(':visible');
+        if (!visible) {
+            $(this).css("text-decoration", "line-through");
+            $(this).css("color", "red");
+        } else {
+            $(this).css("text-decoration", "");
+            $(this).css("color", "black");
+        }
+    });
+
+});
+</script>
+
+
+</head>
+
+
+<!--title>--- mkLog2Seq:ログ → シーケンス図自動生成ツール ---</title-->
+
+
+<body>
+<div class="comments">
+mkLog2Seq html(test) version<br>
+関数名のクリックで折り畳み、グループファイル名(ファイル名)のクリックで非表示、<br>
+関数名のかっこにカーソルを合わせると引数が表示されます。<br>
+</div>

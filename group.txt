@@ -1,0 +1,65 @@
+#
+# '#'で始まる行はコメント
+# ※最初の@endまでが有効
+#
+# @file ファイル名パターン別にシーケンスを出力
+# @func 関数名パターン別にシーケンスを出力
+# @group=正規表現パターン,グループ番号(0-n),グループタイトル
+# @task=正規表現
+#        タスク毎にグループ化してシーケンスを出力(※html試験中)
+# @task_def=1
+#    TASKNAME
+# @func_start_def=1, 2, 3, 4, 5
+#    FILENAME
+#    LINENO
+#    FUNCNAME
+#    FUNCARG
+#    MODE
+# @func_return_def=1, 2, 3, -1, 4, 6, 5
+#    FILENAME
+#    LINENO
+#    FUNCNAME
+#    FUNCARG(reserved)
+#    MODE
+#    RESULT
+#    RESULT_MODE
+#
+#[sample]
+#@func_start=^.*\s*(.*\..*)\s*\:\s*(\d+)\s*\:\s*(.*)(\(.*\))\s*(start)$
+#@func_start_def=1, 2, 3, 4, 5
+#@func_return=^.*\s*(.*\..*)\s*\:\s*(\d+)\s*\:\s*(.*)\s*((return)\((.*)\)|return|end)$
+#@func_return_def=1, 2, 3, -1, 4, 6, 5
+#@task=^.*(pid\=[^ ]+).*$
+#@task_def=1
+
+#log format define
+@func_start=^.*\s+(.*\..*)\s*\:\s*(\d+)\s*\:\s*([a-zA-Z0-9@_\:\$\.]*)(\(.*\))\s+(start)$
+@func_start_def=1, 2, 3, 4, 5
+@func_return=^.*\s+(.*\..*)\s*\:\s*(\d+)\s*\:\s*([a-zA-Z0-9@_\:\$\.]*)\s+((return)\((.*)\)|return|end)$
+@func_return_def=1, 2, 3, -1, 4, 6, 5
+
+#sample-1
+@file
+@end
+
+#sample-2
+@task=^.*(pid\=[^ ]+).*$
+@end
+
+#sample-3
+@file
+@task=^.*(\$\w*)::.*$
+@group=.*,0,ALL
+@end
+
+#sample-4
+@file
+@group=fs\/.*,0,fs
+@end
+
+#sample-5
+@func
+@group=sys_.*,0,sys
+@group=yaffs_.*,1,yaffs
+@group=.*,2,other
+@end
