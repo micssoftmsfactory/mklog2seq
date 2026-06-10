@@ -52,6 +52,9 @@ php -S 127.0.0.1:8000
 
 起動後に `http://127.0.0.1:8000/index.php` を開きます。
 
+公開環境での動作確認先:
+`https://www.mics-soft.jp/autolog/mklog2seq/`
+
 ## 基本的な使い方
 
 1. `index.php` を開く
