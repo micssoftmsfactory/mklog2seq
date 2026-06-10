@@ -137,3 +137,11 @@ php -S 127.0.0.1:8000
 ## 出力例
 
 ![出力例](出力例.jpg)
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
+
+Bundled third-party code:
+
+- `jquery.min.js`: jQuery v3.7.1, distributed under its own license
