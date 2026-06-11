@@ -81,6 +81,9 @@ php -S 127.0.0.1:8000
 
 実装上は `block-start` `block-end` `break` にも対応しています。
 
+`[autolog]` で始まるログ行については、`mklog2seq.php` 内の専用パーサで先頭ヘッダを優先して解析します。  
+それ以外のログ形式は、従来どおり `group.txt` の `@func_start` / `@func_return` などの正規表現定義を使って解析します。
+
 ## `group.txt` の設定
 
 `group.txt` では、ログの正規表現とグループ分け方法を指定できます。

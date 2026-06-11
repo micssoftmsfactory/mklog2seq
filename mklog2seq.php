@@ -76,6 +76,141 @@ set_time_limit(0);
 		//
 	}
 
+	function escapeHtml($text) {
+		return htmlspecialchars((string) $text, ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
+	}
+
+	function splitNonEmptyLines($text) {
+		if ($text === null || $text === "") {
+			return [];
+		}
+
+		$lines = preg_split("/\R/u", $text);
+		if ($lines === false) {
+			return [];
+		}
+
+		$result = [];
+		foreach ($lines as $line) {
+			if (strlen(trim($line)) === 0) {
+				continue;
+			}
+			$result[] = $line;
+		}
+
+		return $result;
+	}
+
+	function parseRegexLogMatches($line, $primaryPattern, $secondaryPattern) {
+		$pattern = $primaryPattern;
+		if (!preg_match("/" . $pattern . "/", $line)) {
+			$pattern = $secondaryPattern;
+		}
+		if (!preg_match_all("/" . $pattern . "/", $line, $matches)) {
+			return null;
+		}
+
+		return $matches;
+	}
+
+	function parseAutologStartLine($line) {
+		if (strpos($line, "[autolog]") !== 0) {
+			return null;
+		}
+
+		if (!preg_match('/^\[autolog\]\s+(.*?\..*?)\s*:\s*(\d+)\s*:\s*([^(]+?)\((.*)\)\s+(start|block-start)\s*$/u', $line, $matches)) {
+			return null;
+		}
+
+		return [
+			"filename" => trim($matches[1]),
+			"lineno" => $matches[2],
+			"funcname" => trim($matches[3]),
+			"args" => "(" . $matches[4] . ")",
+			"mode" => $matches[5],
+		];
+	}
+
+	function parseStartLogLine($line) {
+		global $START_LOG;
+		global $START_LOG2;
+		global $start_log;
+
+		if (strpos($line, "[autolog]") === 0) {
+			return parseAutologStartLine($line);
+		}
+
+		$matches = parseRegexLogMatches($line, $START_LOG, $START_LOG2);
+		if ($matches === null) {
+			return null;
+		}
+
+		return [
+			"filename" => $start_log[LOG_FILENAME] > 0 ? $matches[$start_log[LOG_FILENAME]][0] : null,
+			"lineno" => $start_log[LOG_LINENO] > 0 ? $matches[$start_log[LOG_LINENO]][0] : null,
+			"funcname" => $start_log[LOG_FUNCNAME] > 0 ? $matches[$start_log[LOG_FUNCNAME]][0] : null,
+			"args" => $start_log[LOG_FUNCARG] > 0 ? $matches[$start_log[LOG_FUNCARG]][0] : null,
+			"mode" => $start_log[LOG_MODE] > 0 ? $matches[$start_log[LOG_MODE]][0] : null,
+		];
+	}
+
+	function parseAutologReturnLine($line) {
+		if (strpos($line, "[autolog]") !== 0) {
+			return null;
+		}
+
+		if (preg_match('/^\[autolog\]\s+(.*?\..*?)\s*:\s*(\d+)\s*:\s*(.+?)\s+return\((.*)\)\s*$/u', $line, $matches)) {
+			return [
+				"filename" => trim($matches[1]),
+				"lineno" => $matches[2],
+				"funcname" => trim($matches[3]),
+				"mode" => "return",
+				"result" => $matches[4],
+			];
+		}
+
+		if (!preg_match('/^\[autolog\]\s+(.*?\..*?)\s*:\s*(\d+)\s*:\s*(.+?)\s+(return|end|block-end|break)\s*$/u', $line, $matches)) {
+			return null;
+		}
+
+		return [
+			"filename" => trim($matches[1]),
+			"lineno" => $matches[2],
+			"funcname" => trim($matches[3]),
+			"mode" => $matches[4],
+			"result" => "",
+		];
+	}
+
+	function parseReturnLogLine($line) {
+		global $RETURN_LOG;
+		global $RETURN_LOG2;
+		global $return_log;
+
+		if (strpos($line, "[autolog]") === 0) {
+			return parseAutologReturnLine($line);
+		}
+
+		$matches = parseRegexLogMatches($line, $RETURN_LOG, $RETURN_LOG2);
+		if ($matches === null) {
+			return null;
+		}
+
+		$mode = $return_log[LOG_MODE] > 0 ? $matches[$return_log[LOG_MODE]][0] : null;
+		$result = $return_log[LOG_RESULT] > 0 ? $matches[$return_log[LOG_RESULT]][0] : null;
+		if ($result !== null && $return_log[LOG_MODE_RESULT] > 0) {
+			$mode = $matches[$return_log[LOG_MODE_RESULT]][0];
+		}
+
+		return [
+			"filename" => $return_log[LOG_FILENAME] > 0 ? $matches[$return_log[LOG_FILENAME]][0] : null,
+			"lineno" => $return_log[LOG_LINENO] > 0 ? $matches[$return_log[LOG_LINENO]][0] : null,
+			"funcname" => $return_log[LOG_FUNCNAME] > 0 ? $matches[$return_log[LOG_FUNCNAME]][0] : null,
+			"mode" => $mode,
+			"result" => $result === null ? "" : $result,
+		];
+	}
+
 	//
 	// 出力処理
 	//
@@ -88,18 +223,19 @@ set_time_limit(0);
 		}
 
 		if (!is_null($title) && strlen($title) > 0) {
-			$attr = $attr . " title=\"" . $title . "\"";
+			$attr = $attr . " title=\"" . escapeHtml($title) . "\"";
 		}
 		$attr = trim($attr);
+		$openTag = "<" . $tagname . (strlen($attr) > 0 ? " " . $attr : "") . ">";
 
 		if ($mode == TAG_START) {
-			$result = $result . "<" . $tagname . " " . $attr . ">" . $body;
+			$result = $result . $openTag . $body;
 		}
 		if ($mode == TAG_END) {
 			$result = $result . $body . "</" . $tagname . ">";
 		}
 		if ($mode == TAG_START_END) {
-			$result = $result . "<" . $tagname . " " . $attr . ">";
+			$result = $result . $openTag;
 			$result = $result . $body;
     		$result = $result . "</" . $tagname . ">";
 		}
@@ -174,7 +310,7 @@ set_time_limit(0);
 		// tgnoを付ける
 		$tgno = runMacro_make_tgno_attr($tno, $gno, 0, 0, 0, 0);
 
-        $result = runMacro_make_tag("span", "groupname", $tgno, $title, $name, TAG_START_END);
+        $result = runMacro_make_tag("span", "groupname", $tgno, $title, escapeHtml($name), TAG_START_END);
         $result = runMacro_make_position(0, $tno, $gno, 0, $tno, $gno, 0, $result, TAG_START_END, false);
         $result = $result . "&nbsp;&nbsp;";
 
@@ -190,7 +326,7 @@ set_time_limit(0);
 		// tgnoを付ける
 		$tgno = runMacro_make_tgno_attr($tno, 0, 0, 0, 0, 0);
 
-        $result = runMacro_make_tag("span", "taskname", $tgno, $title, $name, TAG_START_END);
+        $result = runMacro_make_tag("span", "taskname", $tgno, $title, escapeHtml($name), TAG_START_END);
         $result = runMacro_make_position(0, $tno, 0, 0, $tno, 0, 0, $result, TAG_START_END, false);
         $result = $result . "&nbsp;&nbsp;";
 
@@ -203,7 +339,7 @@ set_time_limit(0);
 	function runMacro_setFindComments($lineno, $tno, $gno, $callnums, $last_tno, $last_gno, $last_callnums, $text, $title) {
 		$result = "";
 
-        $result = runMacro_make_tag("span", "comment", "", $title, $text, TAG_START_END);
+        $result = runMacro_make_tag("span", "comment", "", $title, escapeHtml($text), TAG_START_END);
         $result = runMacro_make_position($lineno, $tno, $gno, $callnums, $last_tno, $last_gno, $last_callnums, $result, TAG_START_END, false);
 
         runMacro_write_output( $result );
@@ -237,7 +373,7 @@ set_time_limit(0);
 		// tgnoを付ける
 		$tgno = runMacro_make_tgno_attr($tno, $gno, $callnums, $last_tno, $last_gno, $last_callnums);
 
-		$fn = runMacro_make_tag("span", "funcname", "", $log,  $funcname, TAG_START_END);
+		$fn = runMacro_make_tag("span", "funcname", "", $log, escapeHtml($funcname), TAG_START_END);
         $fa = runMacro_make_tag("span", "funcargs", "", $args, "()", TAG_START_END);
 		$fb = runMacro_make_tag("span", "funcbody", "", "", $fn . $fa, TAG_START_END);
         $func = runMacro_make_tag("div", "", $tgno, "", $fb, TAG_START_END);
@@ -252,10 +388,10 @@ set_time_limit(0);
 		  $title = $funcname . $args;
 		  $body = $filename;
 		  $indexof = strrpos($filename, "/");
-		  if ($indexof == false) {
+		  if ($indexof === false) {
 			  $indexof = strrpos($filename, "\\");
 		  }
-		  if ($indexof != false) {
+		  if ($indexof !== false) {
 			  $body = substr($filename, $indexof+1);
 		  }
 
@@ -266,13 +402,13 @@ set_time_limit(0);
 			  $line = "";
 			  if ($x_offset >= 0) {
 				  if (($gno != $last_gno) || ($tno != $last_tno)) {
-					  $ls = runMacro_make_tag("span", "groupname", "", $title,  $body, TAG_START_END);
+					  $ls = runMacro_make_tag("span", "groupname", "", $title, escapeHtml($body), TAG_START_END);
 					  $line = runMacro_make_position($lineno, $tno, $gno, $callnums, $last_tno, $last_gno, $last_callnums, $ls, TAG_START_END, false);
 				  }
 				  $line = $line . runMacro_make_tag( "hr", "callline call_width_" . $line_width, "align=\"left\"", $title, "", TAG_START_END );
 			  } else {
 				  if (($gno != $last_gno) || ($tno != $last_tno)) {
-					  $ls = runMacro_make_tag("span", "groupname", "", $title,  $body, TAG_START_END);
+					  $ls = runMacro_make_tag("span", "groupname", "", $title, escapeHtml($body), TAG_START_END);
 					  $line = runMacro_make_position($lineno, $tno, $gno, $callnums, $tno, $gno, $last_callnums, $ls, TAG_START_END, false);
 				  }
 				  $line = $line . runMacro_make_tag( "hr", "callline call_width_" . $line_width, "align=\"left\"", $title, "", TAG_START_END );
@@ -282,11 +418,11 @@ set_time_limit(0);
 			  // 新しい始まり
 			  //@@@
 			  $line = runMacro_make_tag( "span", "logstartnewline", "", "", "<br><br>", TAG_START_END );
-			  $ls  = runMacro_make_tag( "span", "logstart", "", "", "logstart " . $taskname, TAG_START_END );
+			  $ls  = runMacro_make_tag( "span", "logstart", "", "", "logstart " . escapeHtml($taskname), TAG_START_END );
 			  $line = $line . runMacro_make_position($lineno, $tno, $gno, $callnums, $last_tno, $last_gno, $last_callnums, $ls, TAG_START_END, false);	//@@@ classname logstart なし
 			  $line = $line . runMacro_make_tag( "span", "", "", "", "<br>", TAG_START_END );
 			  $line = $line . runMacro_make_tag( "hr", "logstart", "width=100%", "", "", TAG_START_END );
-			  $ls = runMacro_make_tag("span", "groupname", "", $title,  $body, TAG_START_END);
+			  $ls = runMacro_make_tag("span", "groupname", "", $title, escapeHtml($body), TAG_START_END);
 			  $line = $line . runMacro_make_position($lineno, $tno, $gno, $callnums, $last_tno, $last_gno, $last_callnums, $ls, TAG_START_END, false);
   		  }
 		  $line = runMacro_make_tag( "div", "", $tgno, "", $line, TAG_START_END );
@@ -343,8 +479,8 @@ set_time_limit(0);
 		// tgnoを付ける
 		$tgno = runMacro_make_tgno_attr($tno, $gno, $callnums, $last_tno, $last_gno, $last_callnums);
 
-		$fe = runMacro_make_tag("span", $classfuncne, "", $log,  $mode, TAG_START_END);
-		$fr = runMacro_make_tag("span", $classfuncresult, "", "",  $result, TAG_START_END);
+		$fe = runMacro_make_tag("span", $classfuncne, "", $log, escapeHtml($mode), TAG_START_END);
+		$fr = runMacro_make_tag("span", $classfuncresult, "", "", escapeHtml($result), TAG_START_END);
 		$fb = runMacro_make_tag("span", $classfuncresultbody, "", "",  $fe . $fr, TAG_START_END);
 		$rs = runMacro_make_tag("div", "", $tgno, "", $fb, TAG_START_END);
 
@@ -374,7 +510,7 @@ set_time_limit(0);
 		  } else {
 			  // ログの終了
 			  $line = runMacro_make_tag( "hr", "logend", "width=100%", "", "", TAG_START_END );
-			  $le = runMacro_make_tag( "span", "logend", "", "", "logend " . $taskname, TAG_START_END );
+			  $le = runMacro_make_tag( "span", "logend", "", "", "logend " . escapeHtml($taskname), TAG_START_END );
 			  $line = $line . runMacro_make_position($lineno, $tno, $gno, $callnums, $last_tno, $last_gno, $last_callnums, $le, TAG_START_END, false);  //@@@ classname logend なし
 			  $line = $line . runMacro_make_tag( "span", "logendnewline", "", "", "<br><br>", TAG_START_END );
 
@@ -423,7 +559,7 @@ set_time_limit(0);
 	function runMacro_make_title($title) {
 		$result = "";
 
-		$result = runMacro_make_tag("h1", "title", "", "", $title, TAG_START_END);
+		$result = runMacro_make_tag("h1", "title", "", "", escapeHtml($title), TAG_START_END);
 
 		return $result;
 	}
@@ -562,6 +698,7 @@ set_time_limit(0);
 		global$return_log;
 		global$TASK_LOG;
 		global$task_log;
+		global$mGroupdefs;
 
 		global$mFlag_group_func;
 		global$mGroupXS;
@@ -574,6 +711,7 @@ set_time_limit(0);
 		if (!is_null($groupInput)) {
 			// グループファイルの配列への読み込み
 			$mPos_life = 30;
+			$mGroupdefs = [];
 
 			foreach ($groupInput as $buff) {
 				$line = trim($buff);
@@ -592,8 +730,8 @@ set_time_limit(0);
 						$task_log[$i] = intval(trim($tmp[$i]));
 					}
 				} else if (strpos($line, "@func_return=") == 0) {
-					$RETURN_LOG = substr(line, 13);
-				} else if (strpos(line, "@func_return_def=") == 0) {
+					$RETURN_LOG = substr($line, 13);
+				} else if (strpos($line, "@func_return_def=") == 0) {
 					$line = substr($line, 17);
 					$tmp = explode(",", $line);
 					for ( $i = 0; $i < count($tmp); $i++) {
@@ -1111,21 +1249,10 @@ set_time_limit(0);
 
 				// printf( "log=[%s]\n", line );
 
+				$startLog = parseStartLogLine($line);
 				$funcname = "";
-				$pattern = $START_LOG;
-				if (!preg_match("/" . $pattern . "/", $line)) {
-					$pattern = $START_LOG2;
-				}
-				if (preg_match_all("/" . $pattern . "/", $line, $matches)) {
-					// start function
-					$funcname = null;
-					if ($start_log[LOG_FUNCNAME] > 0) {
-//@@@todo@@@
-						$funcname = $matches[$start_log[LOG_FUNCNAME]][0];
-					}
-				}
-				if ($funcname == null) {
-					$funcname = "";
+				if ($startLog != null && $startLog["funcname"] != null) {
+					$funcname = $startLog["funcname"];
 				}
 
 				// トリガーとなる関数名まで読み飛ばす
@@ -1135,37 +1262,13 @@ set_time_limit(0);
 					$mIs_logging = true;
 
 					// split word
-					$pattern = $START_LOG;
-					if (!preg_match("/" . $pattern . "/", $line)) {
-						$pattern = $START_LOG2;
-					}
-					if (preg_match_all("/" . $pattern . "/", $line, $matches)) {
+					if ($startLog != null) {
 						// start function
-						$filename = null;
-						if ($start_log[LOG_FILENAME] > 0) {
-//@@@todo@@@
-							$filename = $matches[$start_log[LOG_FILENAME]][0];
-						}
-						$lineno = null;
-						if ($start_log[LOG_LINENO] > 0 ) {
-//@@@todo@@@
-							$lineno = $matches[$start_log[LOG_LINENO]][0];
-						}
-						$funcname = null;
-						if ($start_log[LOG_FUNCNAME] > 0) {
-//@@@todo@@@
-							$funcname = $matches[$start_log[LOG_FUNCNAME]][0];
-						}
-						$args = null;
-						if ($start_log[LOG_FUNCARG] > 0) {
-//@@@todo@@@
-							$args = $matches[$start_log[LOG_FUNCARG]][0];
-						}
-						$mode = null;
-						if ($start_log[LOG_MODE] > 0) {
-//@@@todo@@@
-							$mode = $matches[$start_log[LOG_MODE]][0];
-						}
+						$filename = $startLog["filename"];
+						$lineno = $startLog["lineno"];
+						$funcname = $startLog["funcname"];
+						$args = $startLog["args"];
+						$mode = $startLog["mode"];
 //echo $funcname . "\n";
 						if ($funcname == null) {
 							continue;
@@ -1254,7 +1357,7 @@ set_time_limit(0);
 
 						$color = $mFuncColor;
 
-						$api = strpos($func_api, $funcname) >= 0;
+						$api = count($func_api) > 0 && array_match($func_api, $funcname);
 						if ($api == true) {
 							$color = $mApiColor;
 						}
@@ -1279,47 +1382,15 @@ set_time_limit(0);
 							}
 						}
 					}
-					$pattern = $RETURN_LOG;
-					if (!preg_match("/" . $pattern . "/", $line)) {
-						$pattern = $RETURN_LOG2;
-					}
-					if (preg_match_all("/" . $pattern . "/", $line, $matches)) {
+					$returnLog = parseReturnLogLine($line);
+					if ($returnLog != null) {
 						// end function
 
-						$filename = null;
-						if ( $return_log[LOG_FILENAME] > 0 ) {
-//@@@todo@@@
-							$funcname = $matches[$return_log[LOG_FILENAME]][0];
-						}
-						$lineno = null;
-						if ($return_log[LOG_LINENO] > 0) {
-//@@@todo@@@
-							$lineno = $matches[$return_log[LOG_LINENO]][0];
-						}
-						$funcname = null;
-						if ( $return_log[LOG_FUNCNAME] > 0 ) {
-//@@@todo@@@
-							$funcname = $matches[$return_log[LOG_FUNCNAME]][0];
-						}
-						$mode = null;
-						if ( $return_log[LOG_MODE] > 0) {
-//@@@todo@@@
-							$mode = $matches[$return_log[LOG_MODE]][0];
-						}
-						$funcresult = null;
-						if ($return_log[LOG_RESULT] > 0) {
-//@@@todo@@@
-							$funcresult = $matches[$return_log[LOG_RESULT]][0];
-						}
-						if ( $funcresult == null) {
-							$funcresult = null;
-						} else {
-							$mode = null;
-							if ($return_log[LOG_MODE_RESULT] > 0) {
-//@@@todo@@@
-								$mode = $matches[$return_log[LOG_MODE_RESULT]][0];
-							}
-						}
+						$filename = $returnLog["filename"];
+						$lineno = $returnLog["lineno"];
+						$funcname = $returnLog["funcname"];
+						$mode = $returnLog["mode"];
+						$funcresult = $returnLog["result"];
 
 						if ($funcname == null) {
 							continue;
@@ -1340,7 +1411,7 @@ set_time_limit(0);
 
 						$taskname = "メインタスク";
 						if ($TASK_LOG != null && strlen($TASK_LOG) > 0) {
-							$pattern = TASK_LOG;
+							$pattern = $TASK_LOG;
 							if (preg_match_all("/" . $pattern . "/", $line, $matches)) {
 //@@@todo@@@
 								$taskname = $matches[$task_log[LOG_TASK]][0];
@@ -1498,7 +1569,7 @@ set_time_limit(0);
 						//$name = $file->getName();
 						$name = $group->name;
 						$pos = strrpos($group->name, "/");
-						if ($pos >= 0) {
+						if ($pos !== false) {
                         	$name = substr($group->name, $pos + 1);
 						}
 					}
@@ -1598,7 +1669,10 @@ set_time_limit(0);
         $log = $_POST['log'];
     }
 
-    $logInput = explode("\n", $log);
+    $logInput = preg_split("/\R/u", $log);
+    if ($logInput === false) {
+        $logInput = [];
+    }
 //var_dump($logInput);
 
 	$header = "header";
@@ -1611,23 +1685,28 @@ set_time_limit(0);
         $footer = $_POST['footer'];
     }
 
-	$grouop = "";
-    if(isset($_POST['grouop'])) {
-        $grouop = $_POST['grouop'];
+	$group = "";
+    if(isset($_POST['group'])) {
+        $group = $_POST['group'];
+    } else if(isset($_POST['grouop'])) {
+        $group = $_POST['grouop'];
     }
-    $groupInput = explode("\n", $grouop);
+    $groupInput = preg_split("/\R/u", $group);
+    if ($groupInput === false) {
+        $groupInput = [];
+    }
 
 	$pickup = "";
     if(isset($_POST['pickup'])) {
         $pickup = $_POST['pickup'];
     }
-    $pickup_api = explode("\n", $pickup);
+    $pickup_api = splitNonEmptyLines($pickup);
 
 	$api = "";
     if(isset($_POST['api'])) {
         $api = $_POST['api'];
     }
-    $func_api = $api;
+    $func_api = splitNonEmptyLines($api);
 
 
 	$result = mkseq_buff($title, $logInput, $groupInput, $func_api, $pickup_api, $header, $footer);
